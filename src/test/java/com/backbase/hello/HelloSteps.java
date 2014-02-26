@@ -30,6 +30,12 @@ public class HelloSteps {
         greeting = hello.greet();
     }
 
+    @When("hello is called with argument $name")
+    public void callHello(String name) {
+        log("callHello(" + name + ")");
+        greeting = hello.greet(name);
+    }
+
     @Then("the message should be $value")
     public void check(String value) {
         log("check("+value+")");
